@@ -1,0 +1,15 @@
+# Runtime data (auto-generated on first start)
+data/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
