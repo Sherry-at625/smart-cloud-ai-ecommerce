@@ -1,2 +1,0 @@
-﻿listeners_common: none
-ProxyEnable=0 ProxyServer= AutoConfig=
