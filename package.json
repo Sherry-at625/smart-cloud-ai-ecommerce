@@ -1,0 +1,13 @@
+{
+  "name": "smart-cloud-ai-ecommerce",
+  "version": "1.0.0",
+  "description": "智能云AI电商在线销售系统 — 动态全栈电商系统（内置 AI 推荐 / AI 导购助手 / 智能搜索）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT"
+}
