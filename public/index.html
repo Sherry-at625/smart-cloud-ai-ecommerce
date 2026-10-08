@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智能云AI电商在线销售系统</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>" />
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand" onclick="nav.go('home')"><span class="logo">🛒</span><span>智能云商城</span></div>
+      <form class="search" onsubmit="return nav.search(event)">
+        <input id="searchInput" type="text" placeholder="搜索商品 / 品牌 / 关键词，例如：耳机、礼物、便宜" />
+        <button type="submit">搜索</button>
+      </form>
+      <div class="nav-actions" id="navActions"></div>
+    </div>
+  </header>
+
+  <!-- 主内容 -->
+  <main class="container" id="view"></main>
+
+  <footer class="footer">智能云AI电商在线销售系统 · 内置 AI 智能推荐 / AI 导购助手 / 智能搜索 · Demo</footer>
+
+  <!-- 登录/注册 弹窗 -->
+  <div class="overlay" id="authOverlay">
+    <div class="modal">
+      <h2 id="authTitle">欢迎登录</h2>
+      <div class="sub" id="authSub">登录后即可下单、查看订单并享受 AI 个性化推荐</div>
+      <div class="field">
+        <label>用户名</label>
+        <input id="authUser" type="text" placeholder="请输入用户名" autocomplete="username" />
+      </div>
+      <div class="field">
+        <label>密码</label>
+        <input id="authPwd" type="password" placeholder="请输入密码" autocomplete="current-password" />
+      </div>
+      <div class="field" id="authEmailField" style="display:none">
+        <label>邮箱（选填）</label>
+        <input id="authEmail" type="email" placeholder="you@example.com" />
+      </div>
+      <div class="err" id="authErr"></div>
+      <button class="btn block" id="authSubmit" onclick="nav.submitAuth()">登录</button>
+      <div class="switch-line" id="authSwitch"></div>
+      <div class="tip" id="authTip"></div>
+    </div>
+  </div>
+
+  <!-- AI 导购助手 -->
+  <div class="ai-fab" id="aiFab" onclick="nav.toggleAI()">🤖</div>
+  <div class="ai-panel" id="aiPanel">
+    <div class="ai-head"><span>🤖 AI 导购助手</span><span class="close" onclick="nav.toggleAI()">×</span></div>
+    <div class="ai-msgs" id="aiMsgs"></div>
+    <div class="ai-quick" id="aiQuick">
+      <span onclick="nav.aiQuick('有什么数码好物推荐？')">数码推荐</span>
+      <span onclick="nav.aiQuick('送礼物选什么？')">送礼推荐</span>
+      <span onclick="nav.aiQuick('想要便宜的')">省钱好物</span>
+      <span onclick="nav.aiQuick('退货怎么操作？')">售后政策</span>
+    </div>
+    <form class="ai-input" onsubmit="return nav.sendAI(event)">
+      <input id="aiInput" type="text" placeholder="问我点什么…" />
+      <button type="submit">发送</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
